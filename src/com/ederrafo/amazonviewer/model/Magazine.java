@@ -8,5 +8,5 @@ public class Magazine {
     Date editioDate;
     String editorial;
     String[] authors;
-    
+
 }
