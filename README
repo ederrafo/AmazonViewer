@@ -14,3 +14,17 @@ Si no lo ves en la clase, esta oculto xq ses provisto por java
 
 - Todos los metodos en la clase main.java deben ser estaticos
 ** Por que? vaeriguar
+
+** 37 getters and setters
+Variables primitivas estan en minusculas, duran poco tiempo en memoria
+java desde la version 1 o de la jdk 1 introdujo la clase string para ingresar cadenas envez de hacerlo en arrasys
+Variables objeto primitivo empiezan en mayuscula
+memoria stack
+memoria heap
+
+tipo obejto primitivo se almacenan en el stack
+tipo de dato objeto primitivo se almacena en el heap por que tienen el tiempo de vida mas largo
+
+
+
+

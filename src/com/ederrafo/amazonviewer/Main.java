@@ -7,5 +7,8 @@ public class Main {
     {
         // instanciado el objeto puesto en memoria
         Movie movie = new Movie();
+        System.out.println("movie : " + movie);
+        Movie movie2 = new Movie();
+        System.out.println("movie 2: " + movie2);
     }
 }
