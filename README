@@ -33,4 +33,21 @@ gotto: File > Settings > Keymap > Main Menu > Code > Comment , clic Edit
 
 * El caso de sobrescribir, cuando cambio el comportamiento de un metodo que ya tiene un comportamiento, se le llama POLIMORFISMO
 * El polimorfismo nos permite el mismo metodo con diferente comportamiento.
+En esta clase continuamos aplicando herencia a la entidad Chapter, que viene de Movie.
+
+Todas las entidades están heredando de la clase Object, que tiene métodos definidos. Con la anotación @Override podemos sobreescribir un método de la clase padre, en este caso Object. Esto lo vamos a utilizar para obtener el título, género, año, creador y duración de la película. Cada vez que imprimas el objeto Movie el programa va a arrojar toda la información de la película.
+Sobreescritura: Cuando una clase hereda de otra, y en esta clase hija se redefine un método con una implementación distinta a la de la clase padre.
+Polimorfismo: Posibilidad de construir varios métodos con el mismo nombre, pero con relación a la clase a la que pertenece cada uno, con comportamientos diferentes.
+
+
+
+
+
+
+
+
+
+
+
+
 
