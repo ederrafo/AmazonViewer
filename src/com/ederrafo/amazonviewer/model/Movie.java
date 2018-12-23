@@ -1,61 +1,19 @@
 package com.ederrafo.amazonviewer.model;
 
-public class Movie {
+public class Movie extends Film{
 
-    public int id;
-    public String tittle;
-    public String genre;
-    public String creator;
-    public int duration;
-    public short year;
-    public boolean viewed;
+    private int id;
+    private int timeViewed;
 
-    public String getTittle() {
-        return tittle;
+    public Movie(String tittle, String genre, String creator, int duration, short year) {
+        // Con super estamos haciendo referencia a la clase padre
+        super(tittle, genre, creator, duration);
+        setYear(year);
+
     }
 
-    public void setTittle(String tittle) {
-        this.tittle = tittle;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public short getYear() {
-        return year;
-    }
-
-    public void setYear(short year) {
-        this.year = year;
-    }
-
-    public boolean isViewed() {
-        return viewed;
-    }
-
-    public void setViewed(boolean viewed) {
-        this.viewed = viewed;
+    public int getId() {
+        return id;
     }
 
     public int getTimeViewed() {
@@ -66,13 +24,9 @@ public class Movie {
         this.timeViewed = timeViewed;
     }
 
-    public int timeViewed;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    @Override
+    public String toString() {
+        //return super.toString();
+        return "Title: " + gettitle() + "\n Genre: " + getGenre() + "\n Year:" + getYear();
     }
 }

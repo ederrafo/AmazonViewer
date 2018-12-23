@@ -25,6 +25,12 @@ memoria heap
 tipo obejto primitivo se almacenan en el stack
 tipo de dato objeto primitivo se almacena en el heap por que tienen el tiempo de vida mas largo
 
+* Toda las clases que cree en java ,estara explicitamente heredando dela clase OBJECT, por eso cuando ponemos
+this. o super, vemos metodos que son de la clase object, por ejemplo el metodo tostring,
 
+* short cut coment:
+gotto: File > Settings > Keymap > Main Menu > Code > Comment , clic Edit
 
+* El caso de sobrescribir, cuando cambio el comportamiento de un metodo que ya tiene un comportamiento, se le llama POLIMORFISMO
+* El polimorfismo nos permite el mismo metodo con diferente comportamiento.
 
