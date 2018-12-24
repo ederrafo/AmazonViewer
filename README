@@ -40,6 +40,9 @@ Sobreescritura: Cuando una clase hereda de otra, y en esta clase hija se redefin
 Polimorfismo: Posibilidad de construir varios métodos con el mismo nombre, pero con relación a la clase a la que pertenece cada uno, con comportamientos diferentes.
 
 
+** 33, 34 Interfaces
+Las interfaces son parecidas a las herencias, con la diferencia que se puede aplicar a muchas entidades.
+en las interfaces no se implementa nada, solo van las firmas
 
 
 

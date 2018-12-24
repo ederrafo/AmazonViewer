@@ -1,6 +1,7 @@
 package com.ederrafo.amazonviewer.model;
 
 public class Chapter extends Movie{
+
     int id;
     int sessionNumber;
 

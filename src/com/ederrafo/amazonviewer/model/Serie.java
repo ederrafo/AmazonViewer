@@ -1,6 +1,7 @@
 package com.ederrafo.amazonviewer.model;
 
-public class Serie extends Film{
+public class Serie extends Film
+{
     private int id;
     private int sessionQuantity;
     private Chapter[] chapters  ;
@@ -28,5 +29,16 @@ public class Serie extends Film{
 
     public void setChapters(Chapter[] chapters) {
         this.chapters = chapters;
+    }
+
+    @Override
+    public String toString()
+    {
+        return  "\n :: SERIE :: " +
+                "\n Title: " + getTitle() +
+                "\n Genre: " + getGenre() +
+                "\n Year: " + getYear() +
+                "\n Creator: " + getCreator() +
+                "\n Duration: " + getDuration();
     }
 }

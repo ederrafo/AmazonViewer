@@ -1,56 +1,25 @@
 package com.ederrafo.amazonviewer.model;
 
+import com.ederrafo.amazonviewer.interfaces.IVisualizable;
 
-import java.util.Date; // jalamos del JDK la libreria Dates
+import java.util.Date;
+//jalamos del JDK la libreria Dates
 
-public class Book {
-    int id;
-    String title;
-    Date editioDate;
-    String editorial;
-    String[] authors;
-    String isbn;
-    boolean readed;
-    int timeReaded;
+
+public class Book extends Publication implements IVisualizable {
+
+    private int id;
+    private String isbn;
+    private boolean readed;
+    private int timeReaded;
+
+    public Book(String title, Date editionDate, String editorial, String[] authors) {
+        super(title, editionDate, editorial);
+        setAuthors(authors);
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public Date getEditioDate() {
-        return editioDate;
-    }
-
-    public void setEditioDate(Date editioDate) {
-        this.editioDate = editioDate;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public String[] getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(String[] authors) {
-        this.authors = authors;
     }
 
     public String getIsbn() {
@@ -75,5 +44,31 @@ public class Book {
 
     public void setTimeReaded(int timeReaded) {
         this.timeReaded = timeReaded;
+    }
+
+    @Override
+    public String toString() {
+        String detailBook = "\n :: BOOK ::" +
+                "\n Title: " + getTitle() +
+                "\n Editorial: " + getEditorial() +
+                "\n Edition Date: " + getEditionDate() +
+                "\n Authors: ";
+        for (int i = 0; i < getAuthors().length; i++) {
+            detailBook += "\t" + getAuthors()[i];
+        }
+        return  detailBook;
+    }
+
+    @Override
+    public Date startToSee(Date dateI) {
+        return dateI;
+    }
+
+    @Override
+    public void stopToSee(Date dateI, Date dateF) {
+        setTimeReaded(0);
+        if(dateF.getSeconds() > dateI.getSeconds()){
+            setTimeReaded(dateF.getSeconds() - dateI.getSeconds());
+        }
     }
 }
