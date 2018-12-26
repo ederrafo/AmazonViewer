@@ -2,6 +2,7 @@ package com.ederrafo.amazonviewer.model;
 
 import com.ederrafo.amazonviewer.interfaces.IVisualizable;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Movie extends Film implements IVisualizable {
@@ -14,6 +15,15 @@ public class Movie extends Film implements IVisualizable {
         super(tittle, genre, creator, duration);
         setYear(year);
 
+    }
+
+    public static ArrayList<Movie> makeMoviesList() {
+        ArrayList<Movie> movies = new ArrayList();
+        for (int i = 1; i <= 5; i++) {
+            movies.add(new Movie("Movie " + i, "Genero " + i, "Creador " + i, 120+i, (short)(2017+i)));
+        }
+
+        return movies;
     }
 
     public int getId() {

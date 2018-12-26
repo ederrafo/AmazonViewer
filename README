@@ -45,6 +45,40 @@ Las interfaces son parecidas a las herencias, con la diferencia que se puede apl
 en las interfaces no se implementa nada, solo van las firmas
 
 
+** 45 Colecciones de datos
+Collections para coleciones de objetos, se diferencia de los arrays en que su tamaño no es fijo, son dinamicos
+se puede hacer CRUD a una collecion.
+las colecciones solo aceptan obejtos, osea no aceptan elementos primitivos como int, si le hacemos WRAPPER a Integer si lo podemos usar en una collecion
+List : puede haber elementos repetidos y estan ordenados
+Set : no puede haber e repretidos
+
+* List como interface tiene las siguiente firmas:
+add(objeto)
+add(int indice, objeto)
+get(int indice)
+remove(int indice)
+clear(): elimina todos
+indexOf(Objeto): devuelve el indice si no encuentra devuelve -1
+lastindexof(objeto)
+size()
+contains(objeto)
+
+* Arraylist
+almacena un arreglo deobjeto, sintaxis diamante alli ponemos el tipo de dato/objeto (no funciona con datos primitivos )de la colecion:
+ArrayList<String> androids = new ArrayList<String>();
+androids.add("eder");
+
+*Vectos
+similar a arraylist pero usa hilos y esta sincronizado
+
+** 46 Creando e imprimiendo colecciones de datos
+Ahora vamos a implementar ArrayList en nuestro proyecto. Cuando estemos en el menú podremos seleccionar lo que queremos ver, la idea no es que el usuario ingrese los datos de la película sino ya tener una lista cargada. Utilizando los métodos aprendidos en la clase pasada podemos agregar películas, con add. Para agregar películas de manera más fácil podemos usar un bucle con for.
+La idea al final de ejercicio es que el programa imprima las películas, con su título y la información de si fueron vistas o no, utilizando el método show.
+
+
+
+
+
 
 
 

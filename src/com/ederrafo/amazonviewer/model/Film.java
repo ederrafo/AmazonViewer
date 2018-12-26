@@ -56,8 +56,14 @@ public class Film {
         this.year = year;
     }
 
-    public boolean isViewed() {
-        return viewed;
+    public String isViewed() {
+        String visto = "No";
+        if(viewed == true){
+            visto = "Si";
+        }
+        return visto;
+        // Alternatives
+        // return viewed ? "Yes" : "No";
     }
 
     public void setViewed(boolean viewed) {
