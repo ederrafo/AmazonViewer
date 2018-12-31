@@ -75,6 +75,12 @@ similar a arraylist pero usa hilos y esta sincronizado
 Ahora vamos a implementar ArrayList en nuestro proyecto. Cuando estemos en el menú podremos seleccionar lo que queremos ver, la idea no es que el usuario ingrese los datos de la película sino ya tener una lista cargada. Utilizando los métodos aprendidos en la clase pasada podemos agregar películas, con add. Para agregar películas de manera más fácil podemos usar un bucle con for.
 La idea al final de ejercicio es que el programa imprima las películas, con su título y la información de si fueron vistas o no, utilizando el método show.
 
+** 47 Como leer datos desde la consola de java
+Ahora vamos a trabajar la entrada de texto en Java. Con la clase Scanner vamos a recibir datos,
+la fuente (source) será input string. Básicamente lo que va a recibir es un string y lo va a devolver como entero.
+Con esto se podrá seleccionar la película que se quiere revisar y el programa regresará los datos de la película que elijas,
+incluyendo el tiempo que has visto de la película.
+También podrás regresar al menú para elegir una película diferente.
 
 
 

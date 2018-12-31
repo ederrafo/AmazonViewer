@@ -4,6 +4,7 @@ import com.ederrafo.amazonviewer.model.Movie;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args)
@@ -35,7 +36,11 @@ public class Main {
             System.out.println("0. Exit");
 
             //Leer la respuesta del usuario
-            int response = 1;
+            //Leer la respuesta del usuario
+            Scanner sc = new Scanner(System.in);
+            // int response = Integer.valueOf(sc.nextLine());
+            int response = sc.nextInt();
+
             switch (response) {
                 case 0:
                     //salir
@@ -70,7 +75,7 @@ public class Main {
     }
 
     public static void showMovies() {
-        int exit = 0;
+        int exit = 1;
         ArrayList<Movie> movies = Movie.makeMoviesList();
         do {
             System.out.println();
@@ -83,6 +88,28 @@ public class Main {
 
             System.out.println("0. Regresar al Menu");
             System.out.println();
+
+            //Leer Respuesta usuario
+            Scanner sc = new Scanner(System.in);
+            int response = Integer.valueOf(sc.nextLine());
+
+            if(response == 0) {
+                showMenu();
+            }
+
+            Movie movieSelected = movies.get(response-1);
+            movieSelected.setViewed(true);
+            Date dateI = movieSelected.startToSee(new Date());
+
+            for (int i = 0; i < 1000000; i++) {
+                System.out.println("..........");
+            }
+
+            //Termine de verla
+            movieSelected.stopToSee(dateI, new Date());
+            System.out.println();
+            System.out.println("Viste: " + movieSelected);
+            System.out.println("Por: " + movieSelected.getTimeViewed() + " milisegundos");
 
         }while(exit !=0);
     }
