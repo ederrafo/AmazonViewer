@@ -3,11 +3,16 @@ package com.ederrafo.amazonviewer;
 import com.ederrafo.amazonviewer.model.Movie;
 import com.ederrafo.amazonviewer.model.Serie;
 import com.ederrafo.amazonviewer.model.Chapter;
+import com.ederrafo.report.Report;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
+/***
+ * Todo lo que se declara en el metodo main deben ser estaticas
+ */
 public class Main {
     public static void main(String[] args)
     {
@@ -77,9 +82,12 @@ public class Main {
         }while(exit != 0);
     }
 
+    // ponemos la varible como global para poder accesarla desde otros metodos
+    static ArrayList<Movie> movies;
+
     public static void showMovies() {
+        movies = Movie.makeMoviesList();
         int exit = 1;
-        ArrayList<Movie> movies = Movie.makeMoviesList();
         do {
             System.out.println();
             System.out.println(":: MOVIES ::");
@@ -100,19 +108,21 @@ public class Main {
                 showMenu();
             }
 
-            Movie movieSelected = movies.get(response-1);
-            movieSelected.setViewed(true);
-            Date dateI = movieSelected.startToSee(new Date());
+            if( response > 0 ) {
+                Movie movieSelected = movies.get(response-1);
+                movieSelected.setViewed(true);
+                Date dateI = movieSelected.startToSee(new Date());
 
-            for (int i = 0; i < 1000000; i++) {
-                System.out.println("..........");
+                for (int i = 0; i < 1000000; i++) {
+                    System.out.println("..........");
+                }
+
+                //Termine de verla
+                movieSelected.stopToSee(dateI, new Date());
+                System.out.println();
+                System.out.println("Viste: " + movieSelected);
+                System.out.println("Por: " + movieSelected.getTimeViewed() + " milisegundos");
             }
-
-            //Termine de verla
-            movieSelected.stopToSee(dateI, new Date());
-            System.out.println();
-            System.out.println("Viste: " + movieSelected);
-            System.out.println("Por: " + movieSelected.getTimeViewed() + " milisegundos");
 
         }while(exit !=0);
     }
@@ -206,10 +216,41 @@ public class Main {
 
     public static void makeReport() {
 
+        Report report = new Report();
+        report.setName("Report");
+        report.setTitle(":: Viewed ::");
+        report.setExtension("txt");
+        String contentReport = "";
+
+        for (Movie movie: movies) {
+            if(movie.getIsViewed()){
+                contentReport += movie.toString();
+            }
+        }
+        report.setContent(contentReport);
+        report.makeReport();
+
+
     }
 
     public static void makeReport(Date date) {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = df.format(date);
+        Report report = new Report();
 
+        report.setName("reporte" + dateString);
+        report.setExtension("txt");
+        report.setTitle(":: VISTOS ::");
+        String contentReport = "";
+
+        for (Movie movie : movies) {
+            if (movie.getIsViewed()) {
+                contentReport += movie.toString() + "\n";
+
+            }
+        }
+        report.setContent(contentReport);
+        report.makeReport();
     }
 
 }

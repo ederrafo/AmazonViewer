@@ -1,3 +1,6 @@
+## intellijidea shorcuts
+select line : ctrl + w
+
 - Metodos:
 
 public int suma(int a, int b){

@@ -41,7 +41,7 @@ public class Movie extends Film implements IVisualizable {
     @Override
     public String toString() {
         //return super.toString();
-        return "Title: " + getTitle() + "\n Genre: " + getGenre() + "\n Year:" + getYear();
+        return "\n :: MOVIE :: \n Title: " + getTitle() + "\n Genre: " + getGenre() + "\n Year:" + getYear();
     }
 
     @Override
